@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-danger font-weight-bolder">
+            Possible Error
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Your Card does not allow international transaction.
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col text-primary font-weight-bold">
+            FAQ
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div *ngFor="let item of data;let i = index;">
+                <button class="accordion" (click)="toggleAccordian($event, i)"> {{item.parentName}} </button>
+                <div class="panel" *ngFor="let child of item.childProperties" hide="!item.isActive">
+                <p> {{child.propertyName}} </p>
+              </div>
+              </div>
+        </div>
+    </div>
+</div>

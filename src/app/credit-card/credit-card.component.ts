@@ -25,6 +25,7 @@ export class CreditCardComponent implements OnInit {
   }
 
   errorCodes = [];
+  isSelfHelp: boolean = false;
 
   constructor() { }
 
@@ -46,4 +47,11 @@ export class CreditCardComponent implements OnInit {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  selfhelp() {
+    if(this.isSelfHelp) {
+      this.isSelfHelp = false;
+    } else {
+      this.isSelfHelp = true;
+    }
+  }
 }

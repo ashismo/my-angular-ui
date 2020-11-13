@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { DebitCardComponent } from './debit-card/debit-card.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
+import { SelfHelpFrameComponent } from './self-help-frame/self-help-frame.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
     CreditCardComponent,
     MenuComponent,
     DebitCardComponent,
-    AppLayoutComponent
+    AppLayoutComponent,
+    SelfHelpFrameComponent
   ],
   imports: [
     BrowserModule,
