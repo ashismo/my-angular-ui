@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
+  isCreditCard: boolean = false;
+  isDebitCard: boolean = false;
 
   ngOnInit(): void {
   }
@@ -39,17 +42,27 @@ appitems = [
     items: [
     {
         label: 'Credit Card',
-        link: '/credit',
+        link: '/creditcard',
         activeIcon: 'icon-credit-card'
     },
     {
         label: 'Debit Card',
-        link: '/debit',
+        link: '/debitcard',
         activeIcon: 'icon-debit-card'
     }
     ]
 }
 ];
+
+creditCard() {
+  this.isCreditCard = true;
+  this.route.navigate(['/creditcard']);
+}
+
+debitCard() {
+  this.isDebitCard = true;
+  this.route.navigate(['/debitcard']);
+}
 
 //   appitems = [
 //     {

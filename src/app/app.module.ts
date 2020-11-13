@@ -10,21 +10,27 @@ import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { DebitCardComponent } from './debit-card/debit-card.component';
-
+import { RouterModule, Routes } from '@angular/router';
+import { AppLayoutComponent } from './app-layout/app-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreditCardComponent,
     MenuComponent,
-    DebitCardComponent
+    DebitCardComponent,
+    AppLayoutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     NgMaterialMultilevelMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      { path: 'creditcard', component: CreditCardComponent },
+      { path: 'debitcard', component: DebitCardComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
