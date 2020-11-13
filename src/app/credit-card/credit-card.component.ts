@@ -29,11 +29,11 @@ export class CreditCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.errorCodes.push({code:"CC100", msg:"Something went wrong. Please Try again"});
-    this.errorCodes.push({code:"CC101", msg:"Operation failed. Please Try again"});
-    this.errorCodes.push({code:"CC102", msg:"Link failed. Please Try again"});
-    this.errorCodes.push({code:"CC103", msg:"Internal Server error. Please Try again"});
-    this.errorCodes.push({code:"CC104", msg:"Something went wrong. Please Try again"});
+    this.errorCodes.push({code:"CC100", msg:"Something went wrong. Please try again later.."});
+    this.errorCodes.push({code:"CC101", msg:"Operation failed. Please try again later.."});
+    this.errorCodes.push({code:"CC102", msg:"Link failed. Please try again later.."});
+    this.errorCodes.push({code:"CC103", msg:"Internal Server error. Please try again later.."});
+    this.errorCodes.push({code:"CC104", msg:"Something went wrong. Please try again later.."});
   }
 
   submit(form) {

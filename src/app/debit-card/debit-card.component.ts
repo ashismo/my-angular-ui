@@ -30,11 +30,11 @@ export class DebitCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.errorCodes.push({code:"DD100", msg:"Something went wrong. Please Try again"});
-    this.errorCodes.push({code:"DD101", msg:"Operation failed. Please Try again"});
-    this.errorCodes.push({code:"DD102", msg:"Link failed. Please Try again"});
-    this.errorCodes.push({code:"DD103", msg:"Internal Server error. Please Try again"});
-    this.errorCodes.push({code:"DD104", msg:"Something went wrong. Please Try again"});
+    this.errorCodes.push({code:"DD100", msg:"Something went wrong. Please try again later.."});
+    this.errorCodes.push({code:"DD101", msg:"Operation failed. Please try again later.."});
+    this.errorCodes.push({code:"DD102", msg:"Link failed. Please try again later.."});
+    this.errorCodes.push({code:"DD103", msg:"Internal Server error. Please try again later.."});
+    this.errorCodes.push({code:"DD104", msg:"Something went wrong. Please try again later.."});
   }
 
   submit(form) {
