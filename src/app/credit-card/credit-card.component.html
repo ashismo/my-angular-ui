@@ -1,9 +1,111 @@
 <div class="container-fluid">
-    <div class="row">
-      <div class="col">Test1</div>
-      <div class="col">Test2</div>
-      <div class="col">
-        <button class="btn btn-primary">Submit</button>
-      </div>
+    <div class="row mb-5">
+        <div class="col display-4 text-success font-weight-bold">Credit Card</div>
     </div>
-  </div>
+    <div class="row mb-5" *ngIf="error.code != ''">
+        <div class="col-2"></div>
+        <div class="col">
+            <span class="text-danger font-weight-bold">{{error.code}}: {{error.msg}} </span><span class="text-black"><i class="far fa-question-circle fa-2x"></i></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-6">
+            <form #creditCardForm="ngForm" (ngSubmit)="submit(creditCardForm)">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="card">Card Number</label>
+                                <input type="text" [(ngModel)]="card.card" class="form-control" id="card" required name="card" autocomplete="chrome-off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="expDate">Expiration Date</label>
+                                <input maxlength="4" type="number" class="form-control" id="expDate" required
+                                    [(ngModel)]="card.expDate"
+                                    placeholder="MMYY" name="expDate" autocomplete="chrome-off">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="cvv">CVV Number</label>
+                                <input maxlength="4" type="text" class="form-control" id="cvv" required
+                                    [(ngModel)]="card.cvv"
+                                    placeholder="" name="cvv" autocomplete="chrome-off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="line1">Address Line1</label>
+                                <input type="text" class="form-control" id="line1" 
+                                    [(ngModel)]="card.line1"
+                                    required name="line1" autocomplete="chrome-off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="line2">Address Line2</label>
+                                <input type="text" class="form-control" id="line2" 
+                                    [(ngModel)]="card.line2"
+                                    name="line2" autocomplete="chrome-off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" 
+                                    [(ngModel)]="card.city"
+                                    required name="city" autocomplete="chrome-off">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input type="text" class="form-control" id="country" 
+                                    [(ngModel)]="card.country"
+                                    required name="country" autocomplete="chrome-off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" class="form-control" id="state" 
+                                    [(ngModel)]="card.state"
+                                    required name="state" autocomplete="chrome-off">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" class="form-control" id="zip" 
+                                    [(ngModel)]="card.zip"
+                                    required name="zip" autocomplete="chrome-off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-right">
+                            <button type="button" class="btn btn-secondary custom-btn">Cancel</button>
+                        </div>
+                        <div class="col text-left">
+                            <button type="submit" class="btn btn-primary custom-btn">Pay</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

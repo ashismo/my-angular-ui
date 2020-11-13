@@ -29,3 +29,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 1. Install bootstrap: https://www.truecodex.com/course/angular-project-training/bootstrap-integration-angular
 npm install bootstrap
+
+2. Angular menu: https://developer.aliyun.com/mirror/npm/package/ng-material-multilevel-menu/v/2.0.0
+ng add @angular/material
+npm install --save ng-material-multilevel-menu
+
