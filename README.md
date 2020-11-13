@@ -1,2 +1,2 @@
 # my-angular-ui
-Simple Angular UI App
+Simple Angular UI Application
