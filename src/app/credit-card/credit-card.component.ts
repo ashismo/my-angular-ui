@@ -11,7 +11,7 @@ export class CreditCardComponent implements OnInit {
   error: Errors = {
     code: "",
     msg: ""
-  }
+  };
   card: Card = {
     card: "1111-1111-1111-1111",
     expDate: "1120",
@@ -22,8 +22,9 @@ export class CreditCardComponent implements OnInit {
     country : "USA",
     state : "GA",
     zip : "30338"
-  }
+  };
 
+  tag: string;
   errorCodes = [];
   isSelfHelp: boolean = false;
 
@@ -47,7 +48,8 @@ export class CreditCardComponent implements OnInit {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  selfhelp() {
+  selfhelp(errorCode: any) {
+    this.tag = errorCode;
     if(this.isSelfHelp) {
       this.isSelfHelp = false;
     } else {

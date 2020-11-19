@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ErrorSearchService } from '../error-search.service';
 
 @Component({
   selector: 'app-self-help-frame',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelfHelpFrameComponent implements OnInit {
 
-  constructor() { }
+  @Input() tag: string;
+  errorMsg: any;
+
+  constructor(private errorSearchService: ErrorSearchService) { }
 
   data: any =
     [
@@ -39,7 +43,26 @@ export class SelfHelpFrameComponent implements OnInit {
     ]
 
   ngOnInit() {
-    
+    console.log("Tag: " + this.tag);
+    this.errorSearchService.getTagByTagName(this.tag).subscribe(
+      data => {
+        console.log("TagId response", data);
+        if(data != null && data.length > 0) {
+          var tagId = data[0].id;
+          this.errorSearchService.getContentTagName(tagId).subscribe(
+            data => {
+              console.log("Content response", data);
+              if(data != null && data.length > 0) {
+                console.log("Content: " , data[0].content.rendered);
+                this.errorMsg = data[0].content.rendered;
+                this.errorMsg = this.errorMsg.split("<p>").join("");
+                this.errorMsg = this.errorMsg.split("</p>").join("");
+              }
+            }
+          )
+        }
+      }
+    )
   }
   toggleAccordian(event, index) {
       var element = event.target;

@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  wordpress_server: "http://13.235.51.102/wordpress/index.php/wp-json/wp/v2"
 };
 
 /*

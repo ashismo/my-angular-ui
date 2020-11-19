@@ -13,6 +13,7 @@ import { DebitCardComponent } from './debit-card/debit-card.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { SelfHelpFrameComponent } from './self-help-frame/self-help-frame.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SelfHelpFrameComponent } from './self-help-frame/self-help-frame.compon
     AppRoutingModule,
     NgMaterialMultilevelMenuModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: 'creditcard', component: CreditCardComponent },
       { path: 'debitcard', component: DebitCardComponent }
