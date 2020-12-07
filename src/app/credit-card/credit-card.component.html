@@ -5,7 +5,8 @@
     <div class="row mb-5" *ngIf="error.code != ''">
         <div class="col-2"></div>
         <div class="col">
-            <span class="text-danger font-weight-bold">{{error.code}}: {{error.msg}} </span><span class="text-black"><i class="far fa-question-circle fa-2x" (click)="selfhelp(error.code)"></i></span>
+            <span class="text-danger font-weight-bold">{{error.code}}: {{error.msg}} </span>
+            <span class="text-black"><i class="far fa-question-circle fa-2x" (click)="selfhelp(error.code)"  data-toggle="modal" data-target="#errorModal"></i></span>
         </div>
     </div>
     <div class="row">
@@ -111,5 +112,6 @@
 </div>
 
 <div *ngIf="isSelfHelp == true">
-    <app-self-help-frame [tag]="tag"></app-self-help-frame>
+        <!-- <app-self-help-frame [tag]="tag"></app-self-help-frame> -->
+        <app-iframe-self-help [tag]="tag"></app-iframe-self-help>
 </div>

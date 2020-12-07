@@ -23,4 +23,10 @@ export class ErrorSearchService {
     let url = environment.wordpress_server + "/posts?tags=" + tagId;
     return this.http.get(url);
   }
+
+  getContentTagNameLambda(tagId: string): Observable<any> {
+    console.log('Request is sent!');
+    let url = environment.lambda_api + "?tags=" + tagId;
+    return this.http.get(url);
+  }
 }

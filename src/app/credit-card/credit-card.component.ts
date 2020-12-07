@@ -39,6 +39,7 @@ export class CreditCardComponent implements OnInit {
   }
 
   submit(form) {
+    this.isSelfHelp = false;
     console.log(form.form.controls);
     let index = this.randomInteger(0,3);
     this.error = this.errorCodes[index];

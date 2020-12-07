@@ -2,10 +2,10 @@
 <!-- <app-app-layout></app-app-layout> -->
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2">
+    <div class="col-2" *ngIf="showMenu === true">
       <app-menu></app-menu>
     </div>
-    <div class="col-10">
+    <div class="col">
       <div class="container-fluid">
         <div class="row mt-5">
           <div class="col">

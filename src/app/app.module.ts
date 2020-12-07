@@ -14,6 +14,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { SelfHelpFrameComponent } from './self-help-frame/self-help-frame.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IframeSelfHelpComponent } from './iframe-self-help/iframe-self-help.component';
+import { SafePipe } from './safepipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     DebitCardComponent,
     AppLayoutComponent,
-    SelfHelpFrameComponent
+    SelfHelpFrameComponent,
+    IframeSelfHelpComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'creditcard', component: CreditCardComponent },
-      { path: 'debitcard', component: DebitCardComponent }
+      { path: 'debitcard', component: DebitCardComponent },
+      { path: 'selfhelp', component: SelfHelpFrameComponent }
     ])
   ],
   providers: [],

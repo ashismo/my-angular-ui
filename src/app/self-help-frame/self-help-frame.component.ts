@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ErrorSearchService } from '../error-search.service';
 
 @Component({
@@ -9,9 +10,18 @@ import { ErrorSearchService } from '../error-search.service';
 export class SelfHelpFrameComponent implements OnInit {
 
   @Input() tag: string;
+  hideDuplicate: boolean = true;
   errorMsg: any;
 
-  constructor(private errorSearchService: ErrorSearchService) { }
+  constructor(private errorSearchService: ErrorSearchService, private route: ActivatedRoute) { 
+    this.route.queryParams.subscribe(params => {
+      var t = params['tag'];
+      if(t != null) {
+        this.hideDuplicate = false;
+        this.tag = t;
+      }
+  });
+  }
 
   data: any =
     [
@@ -32,7 +42,7 @@ export class SelfHelpFrameComponent implements OnInit {
           ]
       },
       {
-        "parentName": "Parent Three",
+        "parentName": "Does my account get locks for multiple incorrect attempt?",
         "childProperties":
           [
             { "propertyName": "Property Six" },
@@ -44,6 +54,13 @@ export class SelfHelpFrameComponent implements OnInit {
 
   ngOnInit() {
     console.log("Tag: " + this.tag);
+
+    // this.errorSearchService.getContentTagNameLambda(this.tag).subscribe(
+    //   data => {
+    //     this.errorMsg = data.contentData[0];
+    //   }
+    // );
+
     this.errorSearchService.getTagByTagName(this.tag).subscribe(
       data => {
         console.log("TagId response", data);
@@ -55,14 +72,14 @@ export class SelfHelpFrameComponent implements OnInit {
               if(data != null && data.length > 0) {
                 console.log("Content: " , data[0].content.rendered);
                 this.errorMsg = data[0].content.rendered;
-                this.errorMsg = this.errorMsg.split("<p>").join("");
-                this.errorMsg = this.errorMsg.split("</p>").join("");
+                //this.errorMsg = this.errorMsg.split("<p>").join("");
+                //this.errorMsg = this.errorMsg.split("</p>").join("");
               }
             }
           )
         }
       }
-    )
+    );
   }
   toggleAccordian(event, index) {
       var element = event.target;

@@ -8,7 +8,7 @@ import { Errors } from '../model/errors';
   styleUrls: ['./debit-card.component.scss']
 })
 export class DebitCardComponent implements OnInit {
-
+  isSelfHelp: boolean = false;
   error: Errors = {
     code: "",
     msg: ""
@@ -24,20 +24,21 @@ export class DebitCardComponent implements OnInit {
     state : "GA",
     zip : "30338"
   }
-
+  tag: string;
   errorCodes = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.errorCodes.push({code:"DD100", msg:"Something went wrong. Please try again later.."});
-    this.errorCodes.push({code:"DD101", msg:"Operation failed. Please try again later.."});
-    this.errorCodes.push({code:"DD102", msg:"Link failed. Please try again later.."});
-    this.errorCodes.push({code:"DD103", msg:"Internal Server error. Please try again later.."});
-    this.errorCodes.push({code:"DD104", msg:"Something went wrong. Please try again later.."});
+    this.errorCodes.push({code:"DC100", msg:"Something went wrong. Please try again later.."});
+    this.errorCodes.push({code:"DC101", msg:"Operation failed. Please try again later.."});
+    this.errorCodes.push({code:"DC102", msg:"Link failed. Please try again later.."});
+    this.errorCodes.push({code:"DC103", msg:"Internal Server error. Please try again later.."});
+    this.errorCodes.push({code:"DC104", msg:"Something went wrong. Please try again later.."});
   }
 
   submit(form) {
+    this.isSelfHelp = false;
     console.log(form.form.controls);
     let index = this.randomInteger(0,3);
     this.error = this.errorCodes[index];
@@ -45,5 +46,14 @@ export class DebitCardComponent implements OnInit {
 
   randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  selfhelp(errorCode: any) {
+    this.tag = errorCode;
+    if(this.isSelfHelp) {
+      this.isSelfHelp = false;
+    } else {
+      this.isSelfHelp = true;
+    }
   }
 }
