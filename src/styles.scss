@@ -6,3 +6,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .custom-btn {
     width: 120px !important;
 }
+
+body, html {
+    height: 100%;
+  }
+  .bg {
+    /* The image used */
+    // background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+    background-image: url("https://media.gettyimages.com/videos/soft-background-video-id1132439283?s=640x640");
+    
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  label, p, .error-display {
+      color: black;
+    //   color:light-gray;
+    //   font-weight: bold;
+      font-size: 20px;
+  }
+
+//   input[type="text"] {
+//     // color:#003268;
+//       color:light-gray;
+//       font-weight: lighter;
+//   }
