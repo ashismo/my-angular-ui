@@ -16,7 +16,7 @@ export class AppComponent {
     ngOnInit() {
       
 
-        if(window.location.href != null && window.location.href.indexOf('selfhelp?tag=') > 0) {
+        if(window.location.href != null && window.location.href.indexOf('tag=') > 0) {
           this.showMenu = false;
         }
         console.log(window.location.href);

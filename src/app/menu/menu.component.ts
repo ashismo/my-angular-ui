@@ -41,12 +41,12 @@ appitems = [
     label: 'Payment',
     items: [
     {
-        label: 'Credit Card',
+        label: 'Cargo > Credit Card',
         link: '/creditcard',
         activeIcon: 'icon-credit-card'
     },
     {
-        label: 'Debit Card',
+        label: 'Dotcom > Debit Card',
         link: '/debitcard',
         activeIcon: 'icon-debit-card'
     }

@@ -29,4 +29,20 @@ export class ErrorSearchService {
     let url = environment.lambda_api + "?tags=" + tagId;
     return this.http.get(url);
   }
+
+  getContentFromLambda(channel: string, application: string, module: string, tagIds: string[]): Observable<any> {
+    console.log('Request is sent!');
+    // let url = environment.lambda_api + "?tags=" + tagId;
+
+    let url = environment.lambda_post_api;
+    var body = 
+      {
+        "application": application,
+        "channel": channel,
+        "module": module,
+        "tags": tagIds
+      }
+    
+    return this.http.post(url, body);
+  }
 }

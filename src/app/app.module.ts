@@ -16,6 +16,7 @@ import { SelfHelpFrameComponent } from './self-help-frame/self-help-frame.compon
 import { HttpClientModule } from '@angular/common/http';
 import { IframeSelfHelpComponent } from './iframe-self-help/iframe-self-help.component';
 import { SafePipe } from './safepipe';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { SafePipe } from './safepipe';
       { path: 'selfhelp', component: SelfHelpFrameComponent }
     ])
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
