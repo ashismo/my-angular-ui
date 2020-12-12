@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  wordpress_server: "http://19.234.238.212/wordpress/index.php/wp-json/wp/v2",
+  wordpress_server: "http://19.234.238.248/wordpress/index.php/wp-json/wp/v2",
   lambda_api: "http://selfhel-env-1.eba-gmdmh3bp.us-east-1.elasticbeanstalk.com/content/v1/content",
   lambda_post_api: "http://selfhelpbff-env-1.eba-gmdmh3bp.us-east-1.elasticbeanstalk.com/content/v1/content/details",
   iframe_self_help: "http://localhost:4200/selfhelp?tag=",
