@@ -38,7 +38,7 @@ export class IframeSelfHelpComponent implements OnInit {
     if(this.tags != null) {
       this.url = this.url.replace('_TAGS', this.tags);
     } else {
-      this.url = this.url.replace('tag=_TAGS&', '');
+      this.url = this.url.replace('tag=_TAGS', '');
     }
     console.log(this.url);
   }
