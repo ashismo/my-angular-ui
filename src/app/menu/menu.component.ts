@@ -24,11 +24,11 @@ export class MenuComponent implements OnInit {
   config = {
     paddingAtStart: true,
     interfaceWithRoute: true,
-    classname: 'my-custom-class',
+    classname: 'menu-class',
     listBackgroundColor: `rgb(208, 241, 239)`,
-    fontColor: `rgb(8, 54, 71)`,
+    fontColor: `rgb(0, 0, 0)`,
     backgroundColor: `rgb(208, 241, 239)`,
-    selectedListFontColor: `red`,
+    selectedListFontColor: `rgb(0, 102, 255)`,
     highlightOnSelect: true,
     collapseOnSelect: true,
     rtlLayout: false
@@ -38,20 +38,28 @@ expandCollapseStatus = 'expand'; // expand|collapse
 
 appitems = [
   {
-    label: 'Payment',
-    items: [
-    {
-        label: 'Cargo > Credit Card',
-        link: '/creditcard',
-        activeIcon: 'icon-credit-card'
+    label: 'Booking',
+    items: [{
+      label: 'Flight',
+      items: [
+      {
+          label: 'Debit Card',
+          link: '/debitcard',
+          activeIcon: 'icon-debit-card'
+      }
+      ]
     },
     {
-        label: 'Dotcom > Debit Card',
-        link: '/debitcard',
-        activeIcon: 'icon-debit-card'
-    }
-    ]
-}
+      label: 'Cargo',
+      items: [
+      {
+          label: 'Credit Card',
+          link: '/creditcard',
+          activeIcon: 'icon-credit-card'
+      }
+      ]
+  }]
+  }
 ];
 
 creditCard() {

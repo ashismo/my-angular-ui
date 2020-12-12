@@ -21,7 +21,7 @@
                         <div *ngFor="let item of data;let i = index;">
                             <button class="accordion" (click)="toggleAccordian($event, i)"> {{item.parentName}} </button>
                             <div class="panel" *ngFor="let child of item.childProperties" hide="!item.isActive">
-                            <p> {{child.propertyName}} </p>
+                            <p style="color:black;"> {{child.propertyName}} </p>
                           </div>
                           </div>
                     </div>
@@ -46,7 +46,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body bg-main-theme">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col">
@@ -61,11 +61,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col bg-main-theme">
                         <div *ngFor="let item of data;let i = index;">
                             <button class="accordion" (click)="toggleAccordian($event, i)"> {{item.parentName}} </button>
                             <div class="panel" *ngFor="let child of item.childProperties" hide="!item.isActive">
-                            <p> {{child.propertyName}} </p>
+                            <p style="color:black;"> {{child.propertyName}} </p>
                           </div>
                           </div>
                     </div>

@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="row mb-5">
-        <div class="col display-4 text-success font-weight-bold">Debit Card Payment</div>
+        <div class="col display-4 text-white font-weight-bold">Debit Card Payment</div>
     </div>
     <div class="row mb-5" *ngIf="error.code != ''">
         <div class="col-2"></div>
         <div class="col">
-            <span class="text-danger font-weight-bold error-display">{{error.code}}: {{error.msg}} </span>
-            <span class="text-black"><i class="far fa-question-circle fa-2x" (click)="selfhelp(error.code)" data-toggle="modal" data-target="#errorModal"></i></span>
+            <span class="text-warning font-weight-bold error-display">{{error.code}}: {{error.msg}} </span>
+            <span class="text-white font-weight-bold"><i class="far fa-question-circle fa-3x" (click)="selfhelp(error.code)" data-toggle="modal" data-target="#errorModal"></i></span>
         </div>
     </div>
     <div class="row">
